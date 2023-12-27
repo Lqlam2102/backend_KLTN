@@ -11,7 +11,7 @@ from backend.cores import no_accent_vietnamese
 
 class DynamicAPIView(viewsets.ViewSet, generics.ListAPIView, generics.RetrieveAPIView,
                         generics.UpdateAPIView, generics.DestroyAPIView):
-    parser_classes = [MultiPartParser, FormParser]
+    # parser_classes = [MultiPartParser, FormParser]
     pagination_class = CustomPagination
 
     def get_serializer_class(self):

@@ -19,7 +19,7 @@ class ModelDynamicFolderSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ModelDynamicFolder
-        fields = ['id', 'name_display', 'model', 'data_model', 'wms_info', 'type', 'created_date', 'updated_date',
+        fields = ['id', 'name_display', 'model', 'data_model', 'type', 'created_date', 'updated_date',
                   'description', 'tags', 'alias', 'public']
 
     def get_type(self, obj):
@@ -34,11 +34,10 @@ class ModelDynamicFolderDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ModelDynamicFolder
-        fields = ['id', 'name_display', 'model', 'path', 'data_model', 'construct',
+        fields = ['id', 'name_display', 'model', 'data_model', 'construct',
                   'description', 'tags', 'alias',
-                  'wms_info', 'created_date', 'updated_date', 'public']
+                'created_date', 'updated_date', 'public']
         extra_kwargs = {
-            'path': {'read_only': 'true'},
             'response_wms': {'read_only': 'true'}
         }
 
